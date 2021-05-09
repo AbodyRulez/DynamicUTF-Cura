@@ -1,5 +1,4 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
 <script>
   
 function getURLParameter(name) {
@@ -15,10 +14,12 @@ function getURLParameter(name) {
 }
 
 $(document).ready(function () {
-    var source = getURLParameter("utm_source");
-		var name = document.getElementById("bundlename").textContent || "%D8%A7%D9%84%D8%B9%D9%86%D8%A7%D9%8A%D8%A9%20%D8%A8%D8%A7%D9%84%D8%B5%D8%AD%D8%A9";
-  
-  	var url = `https://get.cura.healthcare/chat/?bundle=${name}&utm_source=${source}`;
+  	let name;
+  	let source;
+  	let url;
+    source = getURLParameter("utm_source");
+		name = document.getElementById("bundlename").textContent || "%D8%A7%D9%84%D8%B9%D9%86%D8%A7%D9%8A%D8%A9%20%D8%A8%D8%A7%D9%84%D8%B5%D8%AD%D8%A9";
+  	url = `https://get.cura.healthcare/chat/?bundle=${name}&utm_source=${source}`;
   	$(".source-btn").attr("href", url);
 });
 
